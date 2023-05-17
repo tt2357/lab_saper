@@ -13,7 +13,7 @@ namespace saper
     public partial class Form1 : Form
     {
         int size;
-        int s;
+        int toFind;
         public Form1()
         {
             InitializeComponent();
@@ -22,19 +22,24 @@ namespace saper
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string size_s = textBox1.Text;
-            size = Int16.Parse(size_s);
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            string s_s = textBox2.Text;
-            s = Int16.Parse(s_s);
+            size = int.Parse(size_s);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(size, s);
+            Form2 form2 = new Form2(size, toFind);
             form2.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            string toFind_s = textBox2.Text;
+            toFind = int.Parse(toFind_s);
         }
     }
 }
